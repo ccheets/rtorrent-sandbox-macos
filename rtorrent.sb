@@ -1,0 +1,44 @@
+(version 1)
+(debug deny)
+(allow process*)
+(allow sysctl-read)
+(allow network-outbound)
+(allow network-bind)
+(allow network-inbound)
+(allow signal)
+
+    (require-entitlement "com.apple.security.network.client")
+    (require-entitlement "com.apple.security.network.server")
+
+(allow file-write*
+    (regex
+        #"^/Users/torrentuser/*"
+        #"^/bin/*"
+        #"^/dev/*"
+        #"^/opt/*"
+        #"^/tmp/*"
+        #"^/usr/*"
+        #"^/etc/*"
+        #"^/var/*"
+    )
+)
+(allow file-read*
+    (regex
+        #"^/Users/torrentuser/*"
+        #"^/bin/*"
+        #"^/dev/*"
+        #"^/opt/*"
+        #"^/tmp/*"
+        #"^/usr/*"
+        #"^/etc/*"
+        #"^/var/*"
+        #"^/private/var/select/sh"
+    )    
+)
+
+(allow file-ioctl
+    (literal "/dev/ptmx")
+    (regex #"^/dev/ttys")
+)
+(allow pseudo-tty)
+(deny default)
