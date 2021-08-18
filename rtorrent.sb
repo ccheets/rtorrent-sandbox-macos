@@ -32,7 +32,6 @@
         #"^/var/*"
         #"^/private/var/select/sh"
         #"^/sbin/ping"
-        #"^/sbin/*"
         #"^/private/*"
     )
 )
