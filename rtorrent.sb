@@ -7,9 +7,6 @@
 (allow network-inbound)
 (allow signal)
 
-    (require-entitlement "com.apple.security.network.client")
-    (require-entitlement "com.apple.security.network.server")
-
 (allow file-write*
     (regex
         #"^/Users/torrentuser/*"
@@ -33,6 +30,7 @@
         #"^/etc/*"
         #"^/var/*"
         #"^/private/var/select/sh"
+        #"^/sbin/ping"
     )    
 )
 
