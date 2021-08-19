@@ -14,3 +14,7 @@ host www.craigcheetham.com > /dev/null ||
 # That local network is not allowed.
 ping -c 5 10.255.108.1 > /dev/null &&
     (echo 'ERROR: The router responded to pings. This means that LAN connectivity is not prevented.')
+
+# Prevent key directories on filesystem from being accessed.
+ls / &> /dev/null && 
+    (echo 'ERROR: Filesystem read from / was allowed.')

@@ -6,8 +6,8 @@
 (allow network-bind)
 (allow network-inbound)
 (allow signal)
-(require-entitlement "com.apple.security.network.client")
-(require-entitlement "com.apple.security.network.server")
+;not sure if this even works for udp enablement (require-entitlement "com.apple.security.network.client")
+;not sure if this even works for udp enablement (require-entitlement "com.apple.security.network.server")
 (allow file-write*
     (regex
         #"^/Users/torrentuser/*"
